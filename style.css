@@ -1,0 +1,213 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Georgia", serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background: #000;
+    color: #f5d27a;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* BRAND WRAPPER */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* LOGO */
+.logo {
+    width: 48px;
+    animation: glow 3s infinite alternate;
+}
+
+/* BRAND TEXT STACK */
+.brand-text {
+    display: flex;
+    flex-direction: column;   /* STACK TEXT VERTICALLY */
+    align-items: flex-start;
+    line-height: 1.1;
+}
+
+/* MAIN BRAND NAME */
+.brand-name {
+    font-size: 18px;      /* slightly smaller than 20px */
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #f5d27a;
+    white-space: nowrap;
+}
+
+
+/* SUB BRAND NAME */
+.brand-sub {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(245, 210, 122, 0.75);
+    margin-top: 4px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+nav a {
+    margin-left: 26px;
+    text-decoration: none;
+    color: #f5d27a;
+    font-size: 15px;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: gold;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+.cart i {
+    font-size: 18px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+    color: #e8c96f;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    padding: 80px 60px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 35px;
+}
+
+.card {
+    background: #0c0c0c;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    padding: 15px;
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 14px 0 6px;
+}
+
+.price {
+    color: gold;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #0a0a0a;
+    padding: 25px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px gold);
+    }
+    to {
+        filter: drop-shadow(0 0 18px gold);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeUp 1.5s forwards;
+}
+
+.delay {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
